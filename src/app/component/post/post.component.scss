@@ -1,0 +1,21 @@
+.card-flex {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.flex-grow {
+  flex: 1;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+mat-card {
+  border-radius: 16px;
+}
+
+mat-card-actions {
+  padding: 16px;
+}
