@@ -1,0 +1,68 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="card mb-4">
+        <h1>{{ mobile.name }}</h1>
+        <div
+          class="card-body"
+          [ngClass]="{
+            noProd: !mobile.isAvailable
+          }"
+        >
+          <div class="row align-items-center">
+            <div class="img col-md-3 text-center mb-3">
+              <img
+                [src]="mobile.image || 'https://placehold.co/600x400'"
+                class="img-fluid"
+                alt="Mobile image"
+              />
+            </div>
+            <div class="col-md-7">
+              <h3>BRAND :- {{ mobile.brand }}</h3>
+              <h4
+                class="badge"
+                [ngClass]="{
+                  'bg-success': mobile.rating >= 3,
+                  'bg-warnig': mobile.rating >= 2 && mobile.rating,
+                  'bg-danger': mobile.rating < 2
+                }"
+              >
+                ☆{{ mobile.rating }}
+              </h4>
+              <h4 class="alert alert-success font-weight-bold">features</h4>
+              <ul class="list-group">
+                <li
+                  class="list-group-item"
+                  *ngFor="let features of mobile.features"
+                >
+                  {{ features }}
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-md-2 text-end">
+              <h3>
+                {{ mobile.price - mobile.price * 0.15 | currency : "USD" }}
+              </h3>
+              <!--  -->
+              <small>
+                <del>
+                  {{ mobile.price | currency : "USD" }}
+                </del>
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="mt-5 d-flex justify-content-end">
+          <button class="btn mr-5 btn-warning">Add To Cart</button>
+          <button class="btn mr-5 btn-primary">Buy Now</button>
+        </div>
+      </div>
+      <strong
+        class="text-danger noAvailable text-center d-flex justify-content-center align-items-center"
+        *ngIf="mobile.isAvailable"
+        >Product Is Not Available</strong
+      >
+    </div>
+  </div>
+</div>
