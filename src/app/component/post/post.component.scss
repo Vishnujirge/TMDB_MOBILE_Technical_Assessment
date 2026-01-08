@@ -1,21 +1,39 @@
-.card-flex {
+/* Card layout */
+.post-card {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  border-radius: 16px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.flex-grow {
+/* Title fixed height */
+.title {
+  min-height: 64px;
+  font-weight: 600;
+}
+
+/* Content stretch to push actions down */
+.content {
   flex: 1;
 }
 
+/* Actions always at bottom */
 .actions {
   display: flex;
   justify-content: space-between;
-}
-mat-card {
-  border-radius: 16px;
+  padding: 16px;
+  margin-top: auto;
 }
 
-mat-card-actions {
-  padding: 16px;
+/* Divider spacing */
+mat-divider {
+  margin: 8px 0;
 }
+
+/* Hover effect */
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+            

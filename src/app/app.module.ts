@@ -12,6 +12,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { MovieDashboardComponent } from './component/movie-dashboard/movie-dashboard.component';
 import { MovieComponent } from './component/movie/movie.component';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MovieComponent } from './component/movie/movie.component';
     BrowserAnimationsModule,
     CommonModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
